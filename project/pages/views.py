@@ -14,21 +14,35 @@ from django.utils.decorators import method_decorator
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.views.generic import View
-from .models import Cart, CartItem, Product,ProductImage
-from django.db.models import Prefetch
+from .models import Cart, CartItem, Product, ProductImage
+from django.db.models import Prefetch,Q
 from .urls import *
 
 # Create your views here.
 
-def HomePage(request):
-    queryset = Product.objects.prefetch_related(Prefetch("images",queryset=ProductImage.objects.all())).all()
-    context = {
-        'products':queryset,
-        # 'photos':[product.images.first().image.url for product in queryset]
-        'cart_item_count':CartItem.objects.filter(cart__user=request.user,cart__status=0).count() if request.user.is_authenticated else 0
-    }
-    return render(request, 'index.html',context=context)
 
+def HomePage(request):
+    queryset = Product.objects.prefetch_related(
+        Prefetch("images", queryset=ProductImage.objects.all())).all()
+    context = {
+        'products': queryset,
+        # 'photos':[product.images.first().image.url for product in queryset]
+        'cart_item_count': CartItem.objects.filter(cart__user=request.user, cart__status=0).count() if request.user.is_authenticated else 0
+    }
+    return render(request, 'index.html', context=context)
+
+
+def product(request):
+    queryset = Product.objects.prefetch_related(
+    Prefetch("images", queryset=ProductImage.objects.all())).all()
+    context = {
+        'products': queryset,
+        'cart_item_count': CartItem.objects.filter(cart__user=request.user, cart__status=0).count() if request.user.is_authenticated else 0,
+        'mens_count':queryset.filter(type__icontains='men').count(),
+        'women_count':queryset.filter(type__icontains='women').count(),
+        'children_count':queryset.filter(type__icontains='children').count(),
+    }
+    return render(request, 'shop.html', context=context)
 #
 #
 # class AboutPage(View):
@@ -36,11 +50,13 @@ def HomePage(request):
 #         return render(request, 'about.html')
 #
 #
+
+
 class Productdetails(View):
     def get(self, request, id):
         product = get_object_or_404(Product, pk=id)
         photos = ProductImage.objects.all().filter(product=product)
-        context = {'product': product,'photos':photos}
+        context = {'product': product, 'photos': photos}
         return render(request, 'shop-details.html', context=context)
 #
 #
@@ -75,12 +91,11 @@ class RegisterView(View):
 
     def post(self, request):
         if request.method == "POST":
-            first_name=request.POST['first_name']
-            last_name=request.POST['last_name']
-            username=request.POST['username']
-            email=request.POST['email']
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            username = request.POST['username']
+            email = request.POST['email']
             email = request.POST.get('email')
-
 
             password = request.POST.get('password')
             print(request.POST)
@@ -91,10 +106,11 @@ class RegisterView(View):
                     message = "User already exists."
                     print(message)
                 else:
-                    user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,password=password,email=email)  # type: ignore
+                    user = User.objects.create_user(
+                        first_name=first_name, last_name=last_name, username=username, password=password, email=email)  # type: ignore
                     user.save()
                     messages.success(request, 'Your Account has been created')
-                    auth.login(request,user)
+                    auth.login(request, user)
                     return redirect('index')
             else:
                 message = "Passwords do not match"
@@ -131,7 +147,7 @@ class LoginView(View):
             password = request.POST.get('password')
             print(username, password)
             user = auth.authenticate(username=username, password=password)
-            print('fsa',user)
+            print('fsa', user)
             if user is not None:
                 auth.login(request, user)
                 messages.success(request, "User Success")
@@ -223,6 +239,8 @@ class LoginView(View):
 #         return redirect('booking')
 #
 #
+
+
 class LogoutView(View):
     def get(self, request):
         auth.logout(request)
@@ -260,18 +278,35 @@ class LogoutView(View):
 #     return render(request=request, template_name="forgetPassword.html",
 #                   context={"password_reset_form": password_reset_form})
 #
+
+
+@login_required(login_url='login')
 def cart(request):
     # Product.objects.prefetch_related(Prefetch("images",queryset=ProductImage.objects.all())).all()
     if request.user.is_authenticated:
-        cart_item_obj = CartItem.objects.filter(cart__user=request.user,cart__status=0)
+        cart_item_obj = CartItem.objects.filter(
+            cart__user=request.user, cart__status=0)
         all_cart_total = 0
         for i in cart_item_obj:
             all_cart_total += i.cart_total()
-        context = {"cart_items": cart_item_obj,'all_cart_total':all_cart_total,'cart_id':Cart.objects.filter(user=request.user,status=0).first().id}
-    
-    return render(request, "shopping-cart.html",context=context)
-    
-    
+        try:
+            context = {
+                "cart_items": cart_item_obj,
+                'all_cart_total': all_cart_total,
+                'cart_id': Cart.objects.filter(user=request.user, status=0).first().id
+            }
+        except Exception as e:
+            print(e)
+            context = {
+                "cart_items": cart_item_obj,
+                'all_cart_total': all_cart_total,
+                'no_items':True
+            }
+            print(context)
+
+    return render(request, "shopping-cart.html", context=context)
+
+
 # def product(request):
 #     return render(request, "product.html")
 #
@@ -281,33 +316,51 @@ def cart(request):
 # def productdetails(request):
 #     return render(request, "product-details.html")
 
-def add_to_cart(request,product_id):
+
+@login_required(login_url='login')
+def add_to_cart(request, product_id):
     if request.user.is_authenticated:
         try:
-            cart_obj = Cart.objects.get(user=request.user)
+            cart_obj = Cart.objects.get(user=request.user,status=0)
         except Cart.DoesNotExist:
             cart_obj = Cart.objects.create(user=request.user)
-        cart_item_obj = CartItem.objects.filter(product=Product.objects.get(id=product_id),cart=cart_obj)
+        cart_item_obj = CartItem.objects.filter(
+            product=Product.objects.get(id=product_id), cart=cart_obj)
         if cart_item_obj.exists():
             cart_item_obj.update(quantity=cart_item_obj.first().quantity+1)
-        else: 
-            CartItem.objects.create(product=Product.objects.get(id=product_id),cart=cart_obj)
+        else:
+            cart_item_obj = CartItem.objects.create(
+                product=Product.objects.get(id=product_id), cart=cart_obj)
+        print(cart_item_obj)
         return redirect("index")
     return redirect("index")
 
-def remove_from_cart(request,item_id):
+
+def remove_from_cart(request, item_id):
     if request.user.is_authenticated:
         CartItem.objects.filter(id=item_id).delete()
     return redirect("cart")
 
 
-def complete_payment(request,cart_id):
+def complete_payment(request, cart_id):
     if request.user.is_authenticated:
         Cart.objects.filter(id=cart_id).update(status=1)
     return redirect("cart")
-    
 
-        
-        
-            
-        
+def search(request):
+    q_objects = Q()
+    queryset = Product.objects.all()
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        q_objects.add(Q(description__icontains=keywords) | Q(name__icontains=keywords),Q.AND)
+        queryset = queryset.filter(q_objects)
+    context = {
+        'products': queryset,
+        'cart_item_count': CartItem.objects.filter(cart__user=request.user, cart__status=0).count() if request.user.is_authenticated else 0,
+        'mens_count':queryset.filter(type__icontains='men').count(),
+        'women_count':queryset.filter(type__icontains='women').count(),
+        'children_count':queryset.filter(type__icontains='children').count(),
+        'values': request.GET,
+    }
+    print(context)
+    return render(request, 'search.html', context=context)
