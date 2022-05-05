@@ -16,12 +16,6 @@
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
                                 <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,7 +79,7 @@
                         </div>
                         <div class="banner__item__text">
                             <h2>Shoes Spring</h2>
-                            <a href="#">Shop now</a>
+                            <a href="{ % url 'product' %}">Shop now</a>
                         </div>
                     </div>
                 </div>
@@ -121,25 +115,7 @@
                             <div class="d-flex row justify-content-between">
                                 <a href="{% url 'add_to_cart' product.id %}" class="add-cart">+ Add To Cart</a>
                             </div>
-                            <!-- <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div> -->
                             <h5>Rs. {{ product.price }}</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
-                            </div>
                         </div>
                     </div>
                 </div>
