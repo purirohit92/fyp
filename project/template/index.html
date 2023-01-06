@@ -1,41 +1,510 @@
-
-{% extends 'main.html' %}
-{% load static %}
-{%block content %}
-
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="{% static 'img/hero/background.jpg' %}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+{%load static%}
+<!DOCTYPE html>
+<html lang="en, Unicode" >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>सनातन शक्ति नेपाल</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" src="{% static 'img/assets/favicon.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <img class="navbar-brand" href="#page-top"><img src="{% static 'img/assets/img/navbar-logo.png'%}" alt="" height="100px", width="300px" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">Agendas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Blogs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">नमस्कार</div>
+                <div class="masthead-heading text-uppercase">ॐ नमो नारायण</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">More</a>
+            </div>
+        </header>
+        <!-- Services-->
+           <!-- Services-->
+           <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">धर्मो रक्षति रक्षित:</h2>
+                    <h3 class="section-subheading text-muted">सनातन हिन्दु धर्मको सम्रक्षण तथा प्रचार गर्ने मुल नारा!<br> Our Main Moto is to save Sanatan Hindu religion and expand worldwide.  </h3>
+                </div>
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <h6 class="text-center" font-size="2rem" >Our Agendas-(हाम्रो बिधान) </h6>
+                        </div>
+                       
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'img/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="modal-body">
+                                        <h2 class="section-heading text-uppercase">Our Agendas </h2>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">क) संस्था जनहितकारी एवं व्यवसायिहरुको हक हित रक्षार्थ मुनाफा वितरण नगर्ने  सामाजिक संस्था हुनेछ । <br> A) This organization will be a no profit sharing organization for the benefit of people
+                                                and for the protection of the rights and interests of the hard working people.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ख) बैदिक सनातन हिन्दु धर्मको संरक्षणार्थ आवश्यक कार्य योजना तर्जुमा र समन्वय गर्ने । <br>B) To formulate and coordinate the necessary action plan for the protection of Vedic Sanatan Hindu religion. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ग) बैदिक सनातन धर्मको महत्व तथा आवश्यकता बारेमा बैज्ञानिक तवरले विश्वमा प्रचार प्रसार गर्ने गराउने । <br> C) To propagate the importance and necessity of Vedic Sanatan Dharma in a scientific way in the world.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">घ) हाम्रा पौराणिक ग्रन्थहरुको भावलाई हालको अवस्थाको आवश्यकतामा समाहित हुने गरी अध्ययन तथा अध्यापन विद्यालयको सुरुवातबाटै संचालनमा ल्याउन समन्वयकारी भुमिक निर्वाह गर्ने । <br> D) To play a coordinating role in bringing the spirit of our Legendary texts into operation from the very beginning of the
+                                            school of study and teaching to adapt to the needs of the present time.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ङ) धर्म रक्षाथ ॐकार परिवार भित्रका सबै संघ संस्था तथा उनको परिवार कुल, परम्परा, भेष भुषा, शिक्षा र संस्कृतीको लोप हुन नदिन आवश्यक कार्य गर्ने । <br> E) To protect the religion, by co-ordinating with all the organizations within the
+                                            Omkar family for work to prevent the dissaperance of their tradition, costume, education and culture.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">च) देशमा भएका पुरातात्विक राष्ट्रिय सम्पदाहरुको उचित अभिलेखिकरण गर्ने कार्यका लागि सम्बन्धित निकायहरुलाई सो गर्न गराउन ध्यानाकर्षण गर्ने गराउने । <br> F) To draw the attention of the concerned bodies for proper archiving of archaelogical national heritage in the country. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">छ) प्राचिन स्मारक, मठ, मन्दिर र र पुरातात्विक सम्पदाको खोजी गर्ने, संरक्षण गर्ने तथा यसका सम्बन्धित निकायहरुलाई सो गर्न गराउन ध्यानाकर्षण गर्ने गराउने । <br> G) To search for and preserve the ancient monuments, monasteries and archaeological heritage and to draw the attention of the concerned bodies. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ज) राष्ट्रिय सम्पदा, स्मारक मठ मन्दिर आदिको महत्व तथा संरक्षणको विषयमा जनचेतना अभिबृछि गर्ने गराउने जस्था कार्यक्रम तर्जुमा गर्ने । <br> H) Promoting programs such as raising public awareness about the importance and protection of National Heritage Monuments, Monasteries, Temples, etc.   </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">झ) साधु सन्त महात्मा तथा जोगिहरुको संरक्षण तथा रक्षार्थ विभिन्न खाले कार्यक्रमहरु संचालनमा ल्याउने । <br> I) To run various programs for the protection and safety of saints and jogis and also use the legal procedure against those who defame actions against our Vedic Sanatan Hindu Religions.   </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ञ) सार्वजनिक तथा राष्ट्रिय सम्पत्ति माथिको अतिक्रमण रोक्न जनस्तरबाट आवाज उठाउने वातावरण तयार गर्ने तथा आवश्यक परेमा कानूनी उपचार समेत प्रयोग गर्ने । <br> J) To create an environment for raising voice from the people to prevent encroachment on public and national property and to use legal remedies if necessary.   </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ट) विपद ब्यवस्थापन सम्बन्धी प्रशिक्षण तथा पूर्ब तयारीका कार्यक्रम गर्ने तथा विपदको बेलामा स्वयंसेवीको भुमिका निर्वाह गर्ने । <br> K) Conducting disaster management training and preparedness programs and volunteering during disasters. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ठ) राष्ट्रमा आईपर्ने प्राकृतिक तथा मानविय विपदहरु विरुद्ध लडन सरकारी संयन्त्र संग हातेमालो गर्न सदा तत्पर रहने  । <br> L) To be always ready to work in hand with the government to fight against natural and man-made disasters in the nation.  </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ड) प्राचिन पद्धति तथा आधुनिक शिक्षणका लागि समानान्तर भुमिका निर्वाह गर्ने । <br> M) To play a parallel role for ancient methods and mordern education.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ढ) गरिविको रेखामुनी रहेका जनता तथा बेरोजगार युवाशक्तिहरुको लागि आयमुलक कार्यक्रम संचालन गरी स्वावलम्बन बनाउने कार्यक्रमहरु तर्जुमा गर्ने कार्यका लागि सरकार संग सहकार्य गर्ने । <br> N) To co-operate with the government in formulating income generating programs for the people living below poverty line and unemployed youth and formulating self-reliance programs. </p>
+                                        </div> 
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ण) कानूनी रुपमा प्रयोग गर्न सकिने प्राकृतिक सम्पदाहरुको उचित प्रयोग गरी आयमुलक कार्यक्रमहरु गरी स्वदेशमा नै रोजगारीको सम्भावनाको विकास गर्ने । <br>O) To develop employment potential in the country through income generating programs by making proper use of legally available natural resources. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">त)  राष्ट्रमा खेर गैरहेका श्रोत तथा साधनहरुको बारेमा अनुसन्धान गरी त्यसको उचित प्रयोग गर्न सम्बन्धित निकायहरुलाई सल्लाह तथा सुझाव दिने । <br> P) To research the wasted resources and means in the nation and to give advice and suggestions to the concerned bodies for their proper use.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">थ) परम्परागत संस्कृती, जात्रा, मेला, पर्ब तथा हाम्रो लोक संस्कृतीहरुको संरक्षण तथा सम्वद्र्धन गर्ने । <br> Q) To preserve and promote traditional culture, fair and our folk cultures. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">द) समाजमा रहेका कुप्रथा तथा बिकृती अनि भ्रष्टाचार तथा बेथिति विरुद्ध जनचेतना मुलक कार्यक्रमहरु सम्बन्धित अधिकार सम्पन्न निकाय संग समन्वय गरी संचालन गर्ने । <br> R) To conduct public awareness programs against malpractice and distortion in the society and against corruption and bigotry in co-ordination with the concerned authorities.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ध) धर्मको गलत ब्याख्या गरी धर्म परिवर्तन गराई अन्य धर्ममा सहभागि भएकाहरुलाई फेरी पनि आफ्नो मुल धर्म हिन्दुमा नै ल्याउने अभियान संचालन गर्ने । <br> S) Conducting a campaign to convert those who have converted to other religions by misinterpreting the religion to bring them back to their origin Hinduism. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">न) गौमाता रक्षार्थ तथा संरक्षणार्थ गाईको पौराणिक धार्मिक तथा बैज्ञानिम महत्वको विषयमा प्रचार प्रसार गरी गौशाला निर्माणको अभियान गर्ने । <br> T) To spread awareness about the legendary religious and scientific significance of cows for the protection and conservation of Cows and to campaign for the construction of cowsheds.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">प) देशमा ब्याप्त धर्म परिवर्तन धार्मिक अन्धविश्वास तथा जातिय छुवाछुत विरुद्ध राष्ट्रब्यापी जनचेतना मुलक अभियान चलाउने । <br> U) To launch a nationwide public awareness campaign against proselytizing, religious superstition and ethnic untouchability in the country. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">फ) हाम्रो धर्म संस्कृतीमाथि भएको बाह्य संस्कृतीको प्रहार विरुद्ध आवाज उठाउने अनि हाम्रा सन्ततीहरुमा सुसंस्कार तथा सुसंस्कृतीको चेतना अभिबृद्धिका कार्यहरु संचालन गर्ने । <br> V) To raise voice against the onslaught of external culture on our religion and culture and to carry out activities to inculcate culture and awareness of good culture in our decendants.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ब) राष्ट्रियताको हितको लागि कुनै पनि कार्यहरु नेपालको कानून अन्तर्गत रही संचालन गर्ने, गराउने । <br> W) To conduct any activities for the benefit of the nation under the law of Nepal.</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">भ) प्राचिन आयुर्बेदिक तथा आधुनिक उपचार पद्धतिलाई संग संगै मानव हितका लागि अगाडी बढाउन अधिकार सम्पन्न निकाय तथा विज्ञहरु संग परामर्श तथा समन्वय गरी प्रचार प्रसार मुलक अभियान संचालन गर्ने । यि दुबै पद्धती सम्पन्न उपचार केन्द्रको स्थापनार्थ सम्बन्धित निकायहरु संग पहल कदमी गर्ने । <br>
+                                            X) To carryout publicity campaigns in consultation and co-ordination with the competent authorities and experts to promote the ancient Ayurvedic and mordern treatment methods together for the benefit of human beings. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">म) विभिन्न ब्यापार ब्यवसाय गरी बसेका खुद्रा तथा थोक अनि उद्योगि ब्यापारीहरु बीच धार्मिक महत्व तथा पुजाआजाको सन्दर्भमा प्रचार प्रसार गर्ने तथा उनिहरुलाई समस्या तथा अप्ठ्यारो परेको अवसथामा नेपालको कानून अन्तर्गत रही समन्वयकारी भुमिका निर्वाह गर्ने । <br> 
+                                                Y) To propagate the religious significance and worship among the retailers and wholesalers and industrialists who are engaged in various business activities and to play a co-ordinating role under the law of Nepal in case of any problem or embarrassment to them.   </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">य) युवा वर्ग विशेषगरी महिलाहरुलाई आत्मरक्षा तथा प्रतिरक्षाको लागि विभिन्न खाले प्रशिक्षण तथा चेतना मुलक कार्यक्रमहरु संचालन गर्ने । <br> Z) Conduct various training and awareness programs for youth, especially women, for self-defence and immunity. </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">र) मानव तथा मानव अंग बेचविखन अनि गौ–हत्या तथा हत्या प्रयाजनार्थ बेचविखन विरुद्ध जनचेतनामुलक अभियान चलाउने । <br> Aa) To launch public awareness campaign against human and human organ trafficking and trafficking for the purpose of slaughtering and slaughtering cows.  </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">ल) सम्पूर्ण मानवमा धार्मिक चेतना अभिबृद्धि गर्ने, विभिन्न लेख रचना तथा पत्रपत्रिका प्रकाशन गर्ने । <br> Bb) To publish various articles and magazines to increase religious consciousness in all human beings.  </p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p class="text-muted">व) देशको अर्थतन्त्र धान्न महत्वपुर्ण भुमिका खेलेका वैदेशिक रोजगारमा गएका सम्पूर्ण नेपालीहरुको लागि स्वदेश तथा विदेशमा अप्ठ्यारो पर्दा कानून बमोजिम साथ सहयोग गर्ने । <br> Cc) To assist at the time of difficulties in the home country or in foreign country under the law to those foreign employment worker who support the economy of the country by their hardworking.</p>
+                                        </div>
+                                
+                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                            <i class="fas fa-times me-1"></i>
+                                            Close Agendas
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="{% static 'img/hero/2.jpg' %}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Blogs</h2>
+                    <h3 class="section-subheading text-muted">हाम्रो कार्यक्रमहरु र केहि सुचनाहरु ।</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+
+            
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'img/assets/img/portfolio/2.jpg'%} " alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'img/assets/img/portfolio/3.jpg'%}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Finish</div>
+                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'img/assets/img/portfolio/4.jpg'" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Lines</div>
+                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'img/assets/img/portfolio/5.jpg'%}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Southwest</div>
+                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'img/assets/img/portfolio/6.jpg'%}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Window</div>
+                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Projects</h2>
+                    <h3 class="section-subheading text-muted">These are all the major projeचts that we are working on. <br> हाम्रो संस्थाको मुख्य कामहरु ।</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/assets/img/about/1.jpg'%}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2009-2011</h4>
+                                <h4 class="subheading">Our Humble Beginnings</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{%static 'img/assets/img/about/2.jpg'%}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>March 2011</h4>
+                                <h4 class="subheading">An Agency is Born</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/assets/img/about/3.jpg'%}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>December 2015</h4>
+                                <h4 class="subheading">Transition to Full Service</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/assets/img/about/4.jpg'%}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>July 2020</h4>
+                                <h4 class="subheading">Phase Two Expansion</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Organization!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">सनातन शक्ति नेपालको कार्यकारी समिति</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'img/assets/img/team/nepaligiri.jpg' %}" alt="..." />
+                            <h4>महन्त नेपाली गिरी <br> Nepali Giri Maharaj</h4>
+                            <p class="text-muted"> अध्यक्ष<br>Chairperson</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'img/assets/img/team/dharmarajgiri.jpg' %}" alt="..." />
+                            <h4>महन्त धर्मराज गिरी <br> Dharmaraj Giri Maharaj</h4>
+                            <p class="text-muted">संरक्षक <br> Mentor</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'img/assets/img/team/gopalgiri.jpg' %}" alt="..." />
+                            <h4>महन्त गोपाल गिरी <br> Gopal Giri Maharaj</h4>
+                            <p class="text-muted">वरिष्ठ उपाध्क्ष्य <br> Senior Assistant Chairperson</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients-->
+        <div class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'img/assets/img/logos/microsoft.svg' %}" alt="..." /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'img/assets/img/logos/google.svg' %}" alt="..." /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'img/assets/img/logos/facebook.svg' %}" alt="..." /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'img/assets/img/logos/ibm.svg' %}" alt="..." /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br/>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 text-lg-start">Copyright &copy; Your Website 2021</div>
+                    <div class="col-lg-3 text-lg-start">Distributed By <a href="https://themewagon.com/">Themewagon</a></div>
+                    <div class="col-lg-3 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-3 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'img/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase" id="projectname">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto"> src="{% static 'img/assets/img/portfolio/2.jpg' %}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Explore
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Graphic Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -43,86 +512,154 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Hero Section End -->
-
-    <!-- Banner Section Begin -->
-    <section class="banner spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 offset-lg-4">
-                    <div class="banner__item">
-                        <div class="banner__item__pic">
-                            <img src="{% static 'img/banner/banner-1.jpg' %}" alt="">
-                        </div>
-                        <div class="banner__item__text">
-                            <h2>Clothing Collections</h2>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="banner__item banner__item--middle">
-                        <div class="banner__item__pic">
-                            <img src="{% static 'img/banner/banner-2.jpg' %}" alt="">
-                        </div>
-                        <div class="banner__item__text">
-                            <h2>Accessories</h2>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="banner__item banner__item--last">
-                        <div class="banner__item__pic">
-                            <img src="{% static 'img/banner/banner-3.jpg' %}" alt=""">
-                        </div>
-                        <div class="banner__item__text">
-                            <h2>Shoes Spring</h2>
-                            <a href="{ % url 'product' %}">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Banner Section End -->
-
-    <!-- Product Section Begin -->
-    <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="filter__controls">
-                        <li class="active">Best Sellers</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row product__filter">
-                {% for product in products %}
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <a href="{% url 'product' product.id %}">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{product.images.first.image.url}}">
-                            <span class="label">New</span>
-                            <ul class="product__hover">
-                                <!-- <li><a href="#"><img src="{% static 'img/icon/heart.png' %}" alt="""></a></li> -->
-                            </ul>
-                        </div>
-                    </a>
-                        <div class="product__item__text">
-                            <h6>{{product.name}}</h6>
-                            <div class="d-flex row justify-content-between">
-                                <a href="{% url 'add_to_cart' product.id %}" class="add-cart">+ Add To Cart</a>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'img/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'img/assets/img/portfolio/3.jpg' %}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Finish
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Identity
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
                             </div>
-                            <h5>Rs. {{ product.price }}</h5>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </section>
-    <!-- Product Section End -->
-
-   {% endblock %}
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'img/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'img/assets/img/portfolio/4.jpg' %}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Lines
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Branding
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'img/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{% static 'img/assets/img/portfolio/5.jpg' %}" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Southwest
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Website Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'img/assets/img/close-icon.svg' %}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="{%static 'img/assets/img/portfolio/6.jpg'%} " alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Window
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Photography
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-times me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js'"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

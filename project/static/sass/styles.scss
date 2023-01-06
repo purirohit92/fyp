@@ -1,0 +1,36 @@
+
+  
+.card-content > .card{
+  margin: 1%;
+  width: calc(96% / 2);
+  background: #1a92b7;
+  border-radius: 7px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 141px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  float: left;
+  color: #fff;
+  transition: .5s;
+  -webkit-transition: .5s;
+  cursor: pointer;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11),
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11),
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11),
+  &:active
+    background-color: #F8971D,
+    user-select: none,
+    transition: 0s,
+    -webkit-transition: 0s
+}
+
+.card-header-title{
+  background: #f4f4f4;
+}
+.card-element-title{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 33px;
+  color: #7f7f7f;
+}
