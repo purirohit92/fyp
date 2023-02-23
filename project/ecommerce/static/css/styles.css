@@ -6750,6 +6750,7 @@ textarea.form-control-lg {
 }
 
 .align-content-center {
+  margin-top: auto !important;
   align-content: center !important;
 }
 
@@ -6880,6 +6881,7 @@ textarea.form-control-lg {
 }
 
 .mx-auto {
+  margin-top: auto !important;
   margin-right: auto !important;
   margin-left: auto !important;
 }
